@@ -26,10 +26,22 @@ export const CircleButton = ({ imgUrl, handlePress, ...props }) => {
     </TouchableOpacity>
   );
 };
-export const RectButton = () => {
+export const RectButton = ({ handlePress, ...props }) => {
   return (
-    <View>
-      <Text>RectButton</Text>
-    </View>
+    <TouchableOpacity
+      style={{
+        width: 60,
+        height: 40,
+        backgroundColor: COLORS.white,
+        borderRadius: SIZES.base,
+        position: "absolute",
+        alignItems: "center",
+        justifyContent: "center",
+        ...props,
+      }}
+      onPress={handlePress}
+    >
+      <Text>VIEW</Text>
+    </TouchableOpacity>
   );
 };

@@ -28,8 +28,15 @@ const Card = ({ data }) => {
           }}
         />
         <CircleButton imgUrl={assets.heart} right={10} top={10} />
+        <RectButton
+          bottom={10}
+          right={10}
+          handlePress={() => {
+            navigation.navigate("Details", { data });
+          }}
+        />
       </View>
-      <SubInfo />
+      <SubInfo data={data} />
     </View>
   );
 };

@@ -1,6 +1,7 @@
 import { View, Text } from "react-native";
 import React from "react";
-import { SIZES } from "../constants";
+import { FONTS, SIZES } from "../constants";
+import { RectButton } from "react-native-gesture-handler";
 
 export const Title = () => {
   return (
@@ -12,20 +13,23 @@ export const Title = () => {
 
 export const Price = () => {
   return (
-    <View style={{ borderWidth: 6 }}>
-      <Text>Price</Text>
-      <Text>Duration</Text>
+    <View>
+      <Text>$30</Text>
+      <Text>2022/08/20-2022/08/22</Text>
     </View>
   );
 };
 export const City = () => {
   return (
     <View>
-      <Text>City</Text>
+      <Text style={{ fontSize: SIZES.extraLarge }}>에어비앤비 양도</Text>
+      <Text style={{ fontSize: SIZES.medium }}>
+        Bussardweg 11, Leinfelden, Germany
+      </Text>
     </View>
   );
 };
-export const SubInfo = () => {
+export const SubInfo = ({ data }) => {
   return (
     <View
       style={{
@@ -35,6 +39,7 @@ export const SubInfo = () => {
         justifyContent: "space-between",
       }}
     >
+      <Text>{data.price}</Text>
       <City />
       <Price />
     </View>
